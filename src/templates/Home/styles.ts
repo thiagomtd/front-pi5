@@ -5,5 +5,6 @@ export const HomeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10rem;
-  flex: 1;
+  min-height: 100vh;
+  background-color: #2b2d42;
 `

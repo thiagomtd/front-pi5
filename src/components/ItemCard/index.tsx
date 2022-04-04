@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import * as S from './styles'
 
 type ItemCardProps = {
@@ -9,7 +10,8 @@ type ItemCardProps = {
 
 const ItemCard = ({ imageSrc, price, title, weight }: ItemCardProps) => {
   return (
-    <S.ItemWrapper>
+    //<Link href={`produto?title=${title}&price=${}`} >
+    <S.ItemWrapper onClick={() => {}}>
       <S.ItemTitle>{title}</S.ItemTitle>
       <S.ItemImage src={imageSrc} />
       <S.ItemValue>
@@ -20,6 +22,7 @@ const ItemCard = ({ imageSrc, price, title, weight }: ItemCardProps) => {
       </S.ItemValue>
       <S.ItemWeight>{weight}g</S.ItemWeight>
     </S.ItemWrapper>
+    //</Link>
   )
 }
 

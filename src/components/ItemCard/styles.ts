@@ -8,8 +8,6 @@ export const ItemWrapper = styled.div`
   background-color: #edf2f4;
   padding: 1rem;
   border-radius: 0.5rem;
-  margin-top: 1rem;
-  max-height: 100vh;
 `
 
 export const ItemTitle = styled.h1``
