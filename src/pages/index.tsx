@@ -1,11 +1,12 @@
 import type { NextPage } from 'next'
-import ItemCard from '../components/ItemCard'
 import HomeTemplate from '../templates/Home/index'
+import SelectPage from '../templates/SelectPage/index'
 
 const Home: NextPage = () => {
   return (
     <div>
       <HomeTemplate />
+      {/* <SelectPage /> */}
     </div>
   )
 }

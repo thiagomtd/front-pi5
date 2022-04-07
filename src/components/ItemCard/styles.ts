@@ -6,7 +6,7 @@ export const ItemWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: #edf2f4;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
 `
 
