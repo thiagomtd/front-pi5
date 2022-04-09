@@ -23,9 +23,7 @@ const SelectCard = ({ price, imageSrc, weight, name }: SelectCardProps) => {
       <S.SelectImage src={imageSrc} />
       <S.SelectDivider />
       <S.SelectDivForm>
-        <S.SelectDisplayQuantity>
-          Quantidade: {quantity}
-        </S.SelectDisplayQuantity>
+        <S.SelectDisplayQuantity>Peso: {newWeight}g</S.SelectDisplayQuantity>
         <S.SelectDisplayPrice>
           Valor: &nbsp;
           {new Intl.NumberFormat('pt-BR', {
