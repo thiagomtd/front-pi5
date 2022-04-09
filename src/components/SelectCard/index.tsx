@@ -13,7 +13,7 @@ type SelectCardProps = {
 const SelectCard = ({ price, imageSrc, weight, name }: SelectCardProps) => {
   // realizar chamada na api para pegar a quantidade maxima do produto
   const maxQuantity = 15
-  const [quantity, quantitySet] = useState(0)
+  const [quantity, quantitySet] = useState(1)
   const newPrice = price * quantity
 
   return (
@@ -34,7 +34,7 @@ const SelectCard = ({ price, imageSrc, weight, name }: SelectCardProps) => {
         <S.SelectDisplayQuantityDiv>
           <S.SelectButtonImMinus
             onClick={() => {
-              if (quantity !== 0) {
+              if (quantity !== 1) {
                 quantitySet(quantity - 1)
               }
             }}>

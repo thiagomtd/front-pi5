@@ -62,6 +62,7 @@ export const SelectButtonImPlus = styled.button`
   min-width: 12vw;
   padding: 1rem;
   margin: 1rem;
+  cursor: pointer;
 `
 
 export const SelectButtonImMinus = styled.button`
@@ -72,9 +73,9 @@ export const SelectButtonImMinus = styled.button`
   border: none;
   min-height: 15vh;
   min-width: 12vw;
-
   padding: 1rem;
   margin: 1rem;
+  cursor: pointer;
 `
 
 export const SelectButtonConfirm = styled.button`
@@ -87,6 +88,7 @@ export const SelectButtonConfirm = styled.button`
   min-width: 5rem;
   padding: 1rem;
   margin: 1rem;
+  cursor: pointer;
 `
 
 export const SelectButtonCancel = styled.button`
@@ -99,4 +101,5 @@ export const SelectButtonCancel = styled.button`
   min-width: 5rem;
   padding: 1rem;
   margin: 1rem;
+  cursor: pointer;
 `
