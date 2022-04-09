@@ -1,7 +1,15 @@
-import * as S from "./styles";
+import { useRouter } from 'next/router'
+import SelectCard from '../../components/SelectCard'
+import * as S from './styles'
 
 const Product = () => {
-  return <S.ProductWrapper></S.ProductWrapper>;
-};
+  const router = useRouter()
+  const { price, name, imgUrl, weight } = router.query
+  return (
+    <S.ProductWrapper>
+      <SelectCard imageSrc={imgUrl} price={price} weight={weight} name={name} />
+    </S.ProductWrapper>
+  )
+}
 
-export default Product;
+export default Product

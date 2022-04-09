@@ -1,9 +1,5 @@
-import { useRouter } from "next/router";
-import ProductPage from "../templates/Product";
+import ProductPage from '../templates/Product/index'
 
 export default function Product() {
-  const router = useRouter();
-
-  console.log(router);
-  return <ProductPage />;
+  return <ProductPage />
 }

@@ -1,10 +1,10 @@
-import * as S from "./styles";
-import mockProducts from "../../components/ItemCard/mock";
-import ItemCard from "../../components/ItemCard";
-import { useRouter } from "next/router";
+import * as S from './styles'
+import mockProducts from '../../components/ItemCard/mock'
+import ItemCard from '../../components/ItemCard'
+import { useRouter } from 'next/router'
 
 const HomeTemplate = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <S.HomeWrapper>
@@ -20,7 +20,7 @@ const HomeTemplate = () => {
         />
       ))}
     </S.HomeWrapper>
-  );
-};
+  )
+}
 
-export default HomeTemplate;
+export default HomeTemplate

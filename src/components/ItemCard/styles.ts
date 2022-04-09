@@ -8,6 +8,7 @@ export const ItemWrapper = styled.div`
   background-color: #edf2f4;
   padding: 1.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 `
 
 export const ItemTitle = styled.h1``
