@@ -7,4 +7,5 @@ export const HomeWrapper = styled.div`
   gap: 10rem;
   min-height: 100vh;
   background-color: #2b2d42;
+  cursor: pointer;
 `
