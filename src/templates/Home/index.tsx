@@ -1,24 +1,26 @@
-import * as S from './styles'
-
-import ItemCard from '../../components/ItemCard'
+import * as S from "./styles";
+import mockProducts from "../../components/ItemCard/mock";
+import ItemCard from "../../components/ItemCard";
+import { useRouter } from "next/router";
 
 const HomeTemplate = () => {
+  const router = useRouter();
+
   return (
     <S.HomeWrapper>
-      <ItemCard
-        imageSrc='https://logosmarcas.net/wp-content/uploads/2021/12/MMs-Logo.png'
-        price={5}
-        title='M&M'
-        weight={25}
-      />
-      <ItemCard
-        imageSrc='https://dori.com.br/wp-content/uploads/2019/07/logo-DORI.png'
-        price={5}
-        title='Amendoim'
-        weight={25}
-      />
+      {mockProducts.map((product) => (
+        <ItemCard
+          onClick={() =>
+            router.push(
+              `/product?name=${product.title}&price=${product.price}&weight=${product.weight}&imgUrl=${product.imageSrc}`
+            )
+          }
+          key={product.title}
+          {...product}
+        />
+      ))}
     </S.HomeWrapper>
-  )
-}
+  );
+};
 
-export default HomeTemplate
+export default HomeTemplate;
