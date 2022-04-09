@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import SelectCard from '../../components/SelectCard'
 import * as S from './styles'
 
-const Product = () => {
+const ProductTemplate = () => {
   const router = useRouter()
   const { price, name, imgUrl, weight } = router.query
   return (
@@ -12,4 +12,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default ProductTemplate

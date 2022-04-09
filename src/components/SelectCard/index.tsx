@@ -2,6 +2,7 @@ import { useState } from 'react'
 import * as S from './styles'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import router from 'next/router'
+import HomeTemplate from '../../templates/Home'
 
 type SelectCardProps = {
   name: string
@@ -15,6 +16,7 @@ const SelectCard = ({ price, imageSrc, weight, name }: SelectCardProps) => {
   const maxQuantity = 15
   const [quantity, quantitySet] = useState(1)
   const newPrice = price * quantity
+  const newWeight = weight * quantity
 
   return (
     <S.SelectWrapper>
@@ -59,8 +61,11 @@ const SelectCard = ({ price, imageSrc, weight, name }: SelectCardProps) => {
                 Nome: `${name}`,
                 Valor: `${newPrice}`,
                 Quantidade: `${quantity}`,
-                Peso: `${weight * quantity}g`,
+                Peso: `${newWeight}g`,
               })
+              router.push(
+                `/qrcode/?name=${name}&price=${newPrice}&weight=${newWeight}`
+              )
             }}>
             Confirmar
           </S.SelectButtonConfirm>
