@@ -1,10 +1,14 @@
 import QrCode from '../../components/QrCode'
 import * as S from './styles'
 
-const QrCodeTemplate = () => {
+export type QrCodeTemplateParams = {
+  payloadPix: string
+}
+
+const QrCodeTemplate = ({payloadPix}: QrCodeTemplateParams) => {
   return (
     <S.ProductWrapper>
-      <QrCode value='any'/>
+      <QrCode value={payloadPix}/>
     </S.ProductWrapper>
   )
 }

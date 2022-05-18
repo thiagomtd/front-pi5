@@ -12,6 +12,7 @@
     "@types/styled-components": "^5.1.24",
     "axios": "^0.27.2",
     "next": "12.1.4",
+    "qrcode-pix": "^4.0.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",

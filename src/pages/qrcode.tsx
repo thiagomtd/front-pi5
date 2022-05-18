@@ -1,32 +1,42 @@
 import axios from 'axios'
 import { GetServerSidePropsContext } from 'next'
 import { useRouter } from 'next/router'
+import { QrCodePix } from 'qrcode-pix'
 import ProductPage from '../templates/Product/index'
-import QrCodeTemplate from '../templates/qrcode'
+import QrCodeTemplate, { QrCodeTemplateParams } from '../templates/qrcode'
 
-export default function Product(resp: any) {
+type ProductParams = {
+  data: QrCodeTemplateParams
+}
 
-  console.log(resp)
+export default function Product({data}: ProductParams) {
 
-  return <QrCodeTemplate />
+  return <QrCodeTemplate payloadPix={data.payloadPix} />
 }
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-  const {query} = context
 
+  const { query } = context
 
-  const resp = axios.post('http://127.0.0.1:5000/orders', {
-    Nome: query?.name,
-    valor: query?.price,
-    quantidade: query?.quantity,
-    peso: query?.weight
-}).then((resp) => resp.data)
+  const qrCodePix = QrCodePix({
+    version: '01',
+    key: '19e9eed9-d57b-43a4-80c3-9e8f3a945c9f', //or any PIX key
+    name: 'THIAGO DE OLIVEIRA SANTOS',
+    city: 'FUNDÃO - ES',
+    transactionId: String(Math.random()*100), //max 25 characters
+    message: `Pague o seu ${query?.name}`,
+    cep: '29185000',
+    value: Number(query.price),
+  })
+
 
 
 
   return {
     props: {
-      data: resp
+      data: {
+        payloadPix: qrCodePix.payload(),
+      }
     }
   }
 }
