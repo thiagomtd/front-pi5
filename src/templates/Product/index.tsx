@@ -7,7 +7,7 @@ const ProductTemplate = () => {
   const { price, name, imgUrl, weight } = router.query
   return (
     <S.ProductWrapper>
-      <SelectCard imageSrc={imgUrl} price={price} weight={weight} name={name} />
+      <SelectCard imageSrc={imgUrl as string} price={price as string} weight={weight as string} name={name as string} />
     </S.ProductWrapper>
   )
 }

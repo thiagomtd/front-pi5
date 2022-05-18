@@ -7,16 +7,16 @@ import HomeTemplate from '../../templates/Home'
 type SelectCardProps = {
   name: string
   imageSrc: string
-  price: number
-  weight: number
+  price: string
+  weight: string
 }
 
 const SelectCard = ({ price, imageSrc, weight, name }: SelectCardProps) => {
   // realizar chamada na api para pegar a quantidade maxima do produto
   const maxQuantity = 15
   const [quantity, quantitySet] = useState(1)
-  const newPrice = price * quantity
-  const newWeight = weight * quantity
+  const newPrice = +price * quantity
+  const newWeight = +weight * quantity
 
   return (
     <S.SelectWrapper>
@@ -62,7 +62,7 @@ const SelectCard = ({ price, imageSrc, weight, name }: SelectCardProps) => {
                 Peso: `${newWeight}g`,
               })
               router.push(
-                `/qrcode/?name=${name}&price=${newPrice}&weight=${newWeight}`
+                `/qrcode/?name=${name}&price=${newPrice}&weight=${newWeight}&quantity=${quantity}`
               )
             }}>
             Confirmar

@@ -1,12 +1,10 @@
-import { useRouter } from 'next/router'
 import QrCode from '../../components/QrCode'
 import * as S from './styles'
 
 const QrCodeTemplate = () => {
-  const router = useRouter()
   return (
     <S.ProductWrapper>
-      <QrCode/>
+      <QrCode value='any'/>
     </S.ProductWrapper>
   )
 }
